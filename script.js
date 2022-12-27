@@ -11,12 +11,12 @@ const unit = document.getElementsByClassName("units");
 const grades = document.getElementsByClassName("grades");
 
 const selector =  document.getElementsByClassName("select");
-
+const display = document.getElementById("display");
 
 let counter;
 
-const userUnits = [];
-const userGrades = [];
+let userUnits = [];
+let userGrades = [];
 
 let i = 0;
 
@@ -71,11 +71,14 @@ insertBtn.onclick =()=>{
         }
     }
 
+    //DELETING FUNTIONS>........
     //initiate delete ability for each new row created by user...
     for(let i = 0; i < cascade.length; i++){
     cascade[i].onclick =()=>{
             newRow[i].remove();
             console.log(i + " has been removed!");
+            userUnits.splice(document.getElementById(`unitRow${cascade[i]}`), 1);
+            console.log("remaining items in units array are: " + userUnits);
         }
     }
     
@@ -84,26 +87,60 @@ insertBtn.onclick =()=>{
 
 counter += 1;
 
-   
-
 }
+
+
+const multiplex = []
+let Toptal, totalMultiplex;
 
 function getGPA(){
+    
 for(let i = 0; i < unit.length; i++){
-    userUnits.push(unit[i].value);
+
+    
+    userUnits.push(parseInt(unit[i].value));
     userGrades.push(grades[i].value);
-    console.log(userUnits + "<br/>" + userGrades);
-    let Toptal = userUnits[i] * userGrades[i];
-    
-    let result = Toptal/userUnits.reduce((a,b) => a + b, 0);
-    
-    console.log(result);
-    }
+   
+    Toptal = userUnits[i] * userGrades[i];
 
 
+    // const sumOfUnits = userUnits.reduce((a,b) => a + b, 0);
+    const sumOfGrades = userGrades.reduce((a,b) => a + b, 0);
+    
+
+    multiplex.push(Toptal);
+
+    totalMultiplex = multiplex.reduce((a,b) => a + b, 0)
+
+    console.log(totalMultiplex);
+}
+
+console.log("the units array: " + userUnits);
+console.log("the grades array: " + userGrades);
+
+
+console.log("GPA: " + totalMultiplex/userUnits.reduce((a,b) => a + b, 0))
+display.innerHTML = totalMultiplex/userUnits.reduce((a,b) => a + b, 0);
+display.innerHTML = parseFloat(display.innerHTML.slice(0,4)).toFixed(2);
+// if(display.innerHTML.length > 1){display.innerHTML += ".0"};
+
+console.log("modified: " + display.innerHTML.slice(0,4));
+
+
+/*
+userUnits = [];
+userGrades = [];
+*/
 }
 
 
+
+for(let i = 0; i < grades.length; i++){
+    units[i].value.onchange =()=>{
+        console.log("calculae GPA...")
+        getGPA();
+    }
+}
 
 
 
