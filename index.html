@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="modal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <title>Document</title>
+</head>
+<body>
+<header></header>
+<main>
+
+    <div class="app">
+        <div class="pane left">
+            <div class="content cnt1">
+                <img src="res/heroImage.png" class="hero-image">
+                <p>Online<br/> GPA Calculator</p>
+                <p class="subtitle">Calculate your GPA at ease using our well customized online calculator plus extra features to give you all you need.</p>
+                <a href="#cnt2"><button class="chi-btn firstbtn">Try Now!</button></a>
+            </div>
+        </div>
+        <div class="pane">
+            <div class="content cnt2" id="cnt2">
+                <div class="top">
+                    <div class="gp">GPA:<span id="gpa-display">0.00</span></div> 
+                    <label for="number-of-courses">Number of courses</label>
+                    <input type="number" name="number-of-courses" id="input" value="5">
+                </div>
+            <div class="calculator-display" id="calculator-display"></div>
+            <button class="chi-btn" style="background: #000;" id="myBtn">Export</button>
+            </div>
+        </div>
+    </div>
+
+
+
+ 
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+        <div class="modal-header">
+            <span class="close">&times;</span>
+            <h2>Share your result!</h2>
+        </div>
+        <div class="modal-body">
+            <p>Save <i class="bi bi-download"></i></p>
+            <p>Share <i class="bi bi-share-fill"></i></p>
+            <p>Print <i class="bi bi-printer-fill"></i></p>
+        </div>
+        <!-- <div class="modal-footer">
+            <h3>Modal Footer</h3>
+        </div> -->
+        </div>
+    
+    </div>
+
+</div>
+
+</main>
+<footer>
+    Online GPA Calculator &copy; 2022.
+    <br/>
+    <div class="links">
+        <a href="" class="foot-links">Github</a>
+        <a href="" class="foot-links">Twitter</a>
+        <a href="" class="foot-links">E-mail</a>
+    </div>
+</footer>
+
+<style>
+</style>
+    
+<script src="script.js"></script>
+<script src="modal.js"></script>
+</body>
+</html>
