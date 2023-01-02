@@ -23,13 +23,14 @@
         </div>
         <div class="pane">
             <div class="content cnt2" id="cnt2">
-                <div class="top">
+                <div class="top" id="top">
                     <div class="gp">GPA:<span id="gpa-display">0.00</span></div> 
                     <label for="number-of-courses">Number of courses</label>
                     <input type="number" name="number-of-courses" id="input" value="5">
                 </div>
             <div class="calculator-display" id="calculator-display"></div>
-            <button class="chi-btn" style="background: #000;" id="myBtn">Export</button>
+            <button class="chi-btn" style="background: #000;" id="myBtn_save">Save result</button>
+            <button class="chi-btn" style=" border: 1px solid #000; color: #000; background: #ffffff;" id="myBtn">Export</button>
             </div>
         </div>
     </div>
@@ -46,9 +47,9 @@
             <h2>Share your result!</h2>
         </div>
         <div class="modal-body">
-            <p>Save <i class="bi bi-download"></i></p>
-            <p>Share <i class="bi bi-share-fill"></i></p>
-            <p>Print <i class="bi bi-printer-fill"></i></p>
+            <button >Save <i class="bi bi-download"></i></button>
+            <button >Share <i class="bi bi-share-fill"></i></button>
+            <button onclick="printResult()">Print <i class="bi bi-printer-fill"></i></button>
         </div>
         <!-- <div class="modal-footer">
             <h3>Modal Footer</h3>

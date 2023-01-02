@@ -13,7 +13,9 @@
         }
     
     
-        
+        .bi{
+            padding-left: 5px;
+        }
     
         body {font-family: myFont;}
         html, body{
@@ -120,6 +122,9 @@
             border: none;
             color: #fff;
             background: linear-gradient(45deg, rgba(0, 14, 255, 1) 0%, rgba(0, 204, 255, 1) 100%);
+        }
+        #myBtn{
+            margin-bottom: 20px;
         }
         .firstbtn{
             padding: 20px 40px;
@@ -257,16 +262,18 @@
     margin: 0 auto;
 }
 
-.modal-body > p{
+.modal-body > button{
     /* width: 100px; */
     padding: 10px 20px;
     border-radius: 10px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    border: none;
+    background: #fff;
 }
 
-.modal-body > p:hover{
+.modal-body > button:hover{
     background: #efefef;
 }
 
